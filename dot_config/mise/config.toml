@@ -1,5 +1,0 @@
-[tools]
-pnpm = "latest"
-
-[settings.npm]
-package_manager = "pnpm"

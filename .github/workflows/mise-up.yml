@@ -54,9 +54,18 @@ jobs:
           install: false
       - run: |
           mkdir -p ~/.config/mise
-          cp dot_config/mise/config.toml ~/.config/mise/config.toml
+          echo <<<'EOF' > ~/.config/mise/config.toml
+          [tools]
+          pnpm = "latest"
+
+          [settings.npm]
+          package_manager = "pnpm"
+          EOF
+
           mkdir -p ~/.config/pnpm
-          cp dot_config/pnpm/rc ~/.config/pnpm/rc
+          echo <<<'EOF' > ~/.config/pnpm/rc
+          minimum-release-age=4320
+          EOF
       - run: mise install
         working-directory: ~/
       - run: mise up --bump ${{ inputs.tools }}
