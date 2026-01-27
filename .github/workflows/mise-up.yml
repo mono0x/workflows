@@ -52,11 +52,6 @@ jobs:
         with:
           version: ${{ inputs.mise-version }}
           install: false
-      - run: |
-          cp dot_config/mise/config.toml ~/.config/mise/config.toml
-          cp dot_config/pnpm/rc ~/.configu/pnpm/rc
-      - run: mise install
-        working-directory: ~/
       - run: mise up --bump ${{ inputs.tools }}
       - id: diff
         run: |
