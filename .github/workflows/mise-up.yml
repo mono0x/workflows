@@ -54,7 +54,7 @@ jobs:
           install: false
       - run: |
           mkdir -p ~/.config/mise
-          echo <<'EOF' > ~/.config/mise/config.toml
+          echo <<<'EOF' > ~/.config/mise/config.toml
           [tools]
           pnpm = "latest"
 
@@ -63,7 +63,7 @@ jobs:
           EOF
 
           mkdir -p ~/.config/pnpm
-          echo <<'EOF' > ~/.config/pnpm/rc
+          echo <<<'EOF' > ~/.config/pnpm/rc
           minimum-release-age=4320
           EOF
       - run: mise install
