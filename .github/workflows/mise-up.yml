@@ -67,7 +67,7 @@ jobs:
           minimum-release-age=4320
           EOF
       - run: mise install
-        working-directory: /home/runner
+        working-directory: ~/
       - run: mise up --bump ${{ inputs.tools }}
       - id: diff
         run: |
