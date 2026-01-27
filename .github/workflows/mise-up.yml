@@ -68,8 +68,6 @@ jobs:
           EOF
       - run: mise install
         working-directory: /home/runner
-        env:
-          MISE_TRUSTED_CONFIG_PATHS: /home/runner/.config/mise/config.toml
       - run: mise up --bump ${{ inputs.tools }}
       - id: diff
         run: |
