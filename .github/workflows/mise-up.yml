@@ -53,10 +53,8 @@ jobs:
           version: ${{ inputs.mise-version }}
           install: false
       - run: |
-          mkdir -p ~/.config/mise
           cp dot_config/mise/config.toml ~/.config/mise/config.toml
-          mkdir -p ~/.config/pnpm
-          cp dot_config/pnpm/rc ~/.config/pnpm/rc
+          cp dot_config/pnpm/rc ~/.configu/pnpm/rc
       - run: mise install
         working-directory: ~/
       - run: mise up --bump ${{ inputs.tools }}
